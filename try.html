@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un Élément</title>
+</head>
+<body>
+    <!-- <div id="conteneur"></div>
+    <button onclick="ajouterParagraphe()">Ajouter un paragraphe</button> -->
+    
+    <ul id="maListe">
+        <li id="element1">Élément 1 <button onclick="supprimerElement('element1')">Supprimer</button></li>
+        <li id="element2">Élément 2 <button onclick="supprimerElement('element2')">Supprimer</button></li>
+        <li id="element3">Élément 3 <button onclick="supprimerElement('element3')">Supprimer</button></li>
+    </ul>
+
+    <script>
+        /*
+        //  function ajouterParagraphe() {
+        //     // Crée un nouvel élément paragraphe
+        //     var nouveauParagraphe = document.createElement('p');
+        //     // Ajoute du texte au paragraphe
+        //     nouveauParagraphe.textContent = 'Ceci est un nouveau paragraphe.';
+        //     // Ajoute le paragraphe au div conteneur
+        //     document.getElementById('conteneur').appendChild(nouveauParagraphe);
+        // }
+*/
+
+        function supprimerElement(id) {
+            var element = document.getElementById(id);
+            if (element) {
+                element.remove();
+            }
+        }
+    
+
+    </script>
+</body>
+</html>

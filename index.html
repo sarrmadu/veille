@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #mondiv{
+            background:rgb(182, 43, 43);
+        }
+        
+    </style>
+
+
+     <h2 id="titre"> Veille num 7</h2>
+     <p id="paragraphe">Vous êtes magnifique</p>
+
+     <button onclick ="changerText()">Cliquer ici</button>
+     <hr>
+     <div id="mondiv">
+        <button onclick="changeElement()">cliquer pour changer</button>
+    </div>
+    <div id="ajouterElem">
+        <h2>ajouter un élément</h2>
+    </div>
+    
+    <button id="ajouter">Ajouter un paragraphe dynamiquement</button>
+    
+        <h2>supprimer un élément</h2>
+        <ul id="maListe">
+            <li id="element1">Élément 1 <button onclick="supprimerElement('element1')">Supprimer</button></li>
+            <li id="element2">Élément 2 <button onclick="supprimerElement('element2')">Supprimer</button></li>
+            <li id="element3">Élément 3 <button onclick="supprimerElement('element3')">Supprimer</button></li>
+        </ul>
+
+        <div>
+            <p id="mon_para">Afficher ou masquer le paragraphe </p>
+            <button id ="toggleButton">Afficher/Masquee</button>
+        </div>
+    
+     <script>
+        function changerText() {
+            let para= document.getElementById("paragraphe");
+            para.textContent = "super changé";
+             para.style.color = 'blue';
+        }
+        function changeElement(){
+            let div = document.getElementById("mondiv");
+            div.style.background = 'yellow';
+        }
+        
+    document.getElementById('ajouter').addEventListener('click', function() {
+    var new_p = document.createElement('p');
+    new_p.textContent = 'Ceci est un nouveau paragraphe ajouté dynamiquement.';
+    new_p.style.color = "red";
+    document.getElementById('ajouterElem').appendChild(new_p);
+});
+
+function supprimerElement(id) {
+            var element = document.getElementById(id);
+            if (element) {
+                element.remove();
+            }
+        }
+
+    function rendreVisiblePara(){
+        let parag = document.getElementById('mon_para');
+        if (parag.style.display === 'none') {
+                parag.style.display = 'block';
+            } else {
+                parag.style.display = 'none';
+            }
+        }
+        document.getElementById('toggleButton').addEventListener('click',rendreVisiblePara);
+    
+    </script>
+</body>
+</html>
